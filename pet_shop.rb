@@ -80,7 +80,17 @@ def customer_pet_count(customers_array)
     return customers_array[:pets].length
 end
 
-def add_pet_to_customer(customers_array,new_pet)
-  customers_array[:pets].push@new_pet
+def add_pet_to_customer(customers_array,new_pet_hash)
+  customers_array[:pets].push@new_pet_hash
   return customers_array[:pets].length
+end
+
+def customer_can_afford_pet(customers_array,new_pet_hash)
+  if
+    customers_array[:cash] < new_pet_hash[:price]
+    can_buy_pet = false
+  else
+    can_buy_pet = true
+  end
+  return can_buy_pet
 end
